@@ -46,24 +46,23 @@
         }
 
         .profile-pic {
-    flex-shrink: 0;
-    width: 220px; /* Larger size for desktop */
-    height: 250px; /* Maintains oval shape */
-    border-radius: 50% / 60%; /* Oval shape */
-    object-fit: cover; /* Ensures image fills the shape */
-    object-position: top; /* Keeps the top of the image (your face) in focus */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
+            flex-shrink: 0;
+            width: 220px; /* Larger size for desktop */
+            height: 250px; /* Maintains oval shape */
+            border-radius: 50% / 60%; /* Oval shape */
+            object-fit: cover; /* Ensures image fills the shape */
+            object-position: top; /* Keeps the top of the image (your face) in focus */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
 
-@media (max-width: 768px) {
-    .profile-pic {
-        width: 180px; /* Smaller but proportional size for mobile */
-        height: 250px; /* Adjust for oval shape */
-        object-fit: cover; /* Ensures image fills the oval */
-        object-position: top; /* Keeps your face centered */
-    }
-}
-
+        @media (max-width: 768px) {
+            .profile-pic {
+                width: 180px; /* Smaller but proportional size for mobile */
+                height: 250px; /* Adjust for oval shape */
+                object-fit: cover; /* Ensures image fills the oval */
+                object-position: top; /* Keeps your face centered */
+            }
+        }
 
         .about-content div {
             display: flex;
@@ -129,21 +128,29 @@
         }
 
         .carousel-item {
-            min-width: 300px;
+            width: 150px; /* Smaller size for project items */
             background: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
             border-radius: 8px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            padding: 1rem;
+            padding: 0.5rem;
             flex-shrink: 0;
+            text-align: center;
         }
 
         .carousel-item img,
         .carousel-item video {
             width: 100%;
+            height: auto;
             border-radius: 8px;
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem;
         }
 
+        .carousel-item video:hover,
+        .carousel-item video:focus {
+            autoplay: true;
+            muted: true;
+            loop: true;
+        }
         footer {
             text-align: center;
             margin-top: 2rem;
@@ -175,6 +182,10 @@
                 flex-direction: column;
                 align-items: center;
                 text-align: center;
+            }
+
+            .carousel-item {
+                width: 100px; /* Smaller size for mobile */
             }
         }
     </style>
@@ -261,8 +272,20 @@
                     <p>Project 2 Description</p>
                 </div>
                 <div class="carousel-item">
-                    <video src="project3.mp4" controls></video>
+                    <video src="project3.mp4" autoplay muted loop></video>
                     <p>Project 3 Video Description</p>
+                </div>
+                <div class="carousel-item">
+                    <img src="project4.mp4" alt="Project 4">
+                    <p>Project 4 Description</p>
+                </div>
+                <div class="carousel-item">
+                    <img src="project5.jpg" alt="Project 5">
+                    <p>Project 5 Description</p>
+                </div>
+                <div class="carousel-item">
+                    <img src="project6.jpg" alt="Project 6">
+                    <p>Project 6 Description</p>
                 </div>
             </div>
         </section>
