@@ -46,13 +46,24 @@
         }
 
         .profile-pic {
-            flex-shrink: 0;
-            width: 220px; /* Increased size for better fit */
-            height: 350px; /* Adjust to create an oval shape */
-            border-radius: 50% / 60%; /* Makes it an oval */
-            object-fit: cover;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
+    flex-shrink: 0;
+    width: 220px; /* Larger size for desktop */
+    height: 250px; /* Maintains oval shape */
+    border-radius: 50% / 60%; /* Oval shape */
+    object-fit: cover; /* Ensures image fills the shape */
+    object-position: top; /* Keeps the top of the image (your face) in focus */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+    .profile-pic {
+        width: 180px; /* Smaller but proportional size for mobile */
+        height: 250px; /* Adjust for oval shape */
+        object-fit: cover; /* Ensures image fills the oval */
+        object-position: top; /* Keeps your face centered */
+    }
+}
+
 
         .about-content div {
             display: flex;
