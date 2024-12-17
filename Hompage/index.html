@@ -31,6 +31,55 @@
             margin: 2rem auto;
         }
 
+        .dropdown-container {
+            margin-bottom: 2rem;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown button {
+            background: #0078d4;
+            color: white;
+            border: none;
+            padding: 0.8rem;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
+            min-width: 160px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+            border-radius: 4px;
+            padding: 0.5rem 0;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 0.8rem;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .dropdown button:focus + .dropdown-content,
+        .dropdown-content.show {
+            display: block;
+        }
+
         .about {
             margin: 2rem 0;
             padding: 1rem;
@@ -74,47 +123,6 @@
             margin-bottom: 1rem; /* Add space between paragraphs */
         }
 
-        .dropdown {
-            position: relative;
-            display: inline-block;
-            margin: 0.5rem;
-        }
-
-        .dropdown button {
-            background: #0078d4;
-            color: white;
-            border: none;
-            padding: 0.8rem;
-            font-size: 1rem;
-            cursor: pointer;
-            border-radius: 4px;
-        }
-
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
-            min-width: 160px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            z-index: 1;
-            border-radius: 4px;
-        }
-
-        .dropdown-content a {
-            color: black;
-            padding: 0.8rem;
-            text-decoration: none;
-            display: block;
-        }
-
-        .dropdown-content a:hover {
-            background-color: #f1f1f1;
-        }
-
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-
         .project-highlights {
             margin-top: 3rem;
             text-align: center;
@@ -151,6 +159,7 @@
             muted: true;
             loop: true;
         }
+
         footer {
             text-align: center;
             margin-top: 2rem;
@@ -197,6 +206,61 @@
     </header>
 
     <div class="container">
+        <div class="dropdown-container">
+            <div class="dropdown">
+                <button onclick="toggleDropdown(event)">Projects</button>
+                <div class="dropdown-content">
+                    <a href="../Projects/projects.html#longboard">Electric Longboard</a>
+                    <a href="../Projects/projects.html#vehicle">Autonomous Vehicle</a>
+                    <a href="../Projects/projects.html#sustainable">Sustainable Building Design using Wind Farm</a>
+                    <a href="../Projects/projects.html#hydroponic">Hydroponic System</a>                    
+                    <a href="../Projects/projects.html#wireless">Wireless Charging System</a>
+                    <a href="../Projects/projects.html#elevator">Elevator PID controller</a>
+                    <a href="../Projects/projects.html#snowplow">Autonomous Snowplow</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button onclick="toggleDropdown(event)">Experience</button>
+                <div class="dropdown-content">
+                    <a href="../Experience/experience.html#company1">Company 1</a>
+                    <a href="experience.html">Company 2</a>
+                    <a href="experience.html">Company 3</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button onclick="toggleDropdown(event)">Skills</button>
+                <div class="dropdown-content">
+                    <a href="skills.html">Skill 1</a>
+                    <a href="skills.html">Skill 2</a>
+                    <a href="skills.html">Skill 3</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button onclick="toggleDropdown(event)">Resume/Documents</button>
+                <div class="dropdown-content">
+                    <a href="resume.html">Resume</a>
+                    <a href="resume.html">LinkedIn</a>
+                    <a href="resume.html">GitHub</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button onclick="toggleDropdown(event)">Hobbies/Extracurricular</button>
+                <div class="dropdown-content">
+                    <a href="hobbies.html">Hobby 1</a>
+                    <a href="hobbies.html">Hobby 2</a>
+                    <a href="hobbies.html">Hobby 3</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button onclick="toggleDropdown(event)">Contacts</button>
+                <div class="dropdown-content">
+                    <a href="contacts.html">Email</a>
+                    <a href="contacts.html">LinkedIn</a>
+                    <a href="contacts.html">GitHub</a>
+                </div>
+            </div>
+        </div>
+
         <section class="about">
             <h2>About Me:</h2>
             <div class="about-content">
@@ -223,42 +287,6 @@
                 </div>
             </div>
         </section>
-
-        <div class="dropdown">
-            <button>Projects</button>
-            <div class="dropdown-content">
-                <a href="#">Project 1</a>
-                <a href="#">Project 2</a>
-                <a href="#">Project 3</a>
-            </div>
-        </div>
-
-        <div class="dropdown">
-            <button>Experience</button>
-            <div class="dropdown-content">
-                <a href="#">Company 1</a>
-                <a href="#">Company 2</a>
-                <a href="#">Company 3</a>
-            </div>
-        </div>
-
-        <div class="dropdown">
-            <button>Skills</button>
-            <div class="dropdown-content">
-                <a href="#">Skill 1</a>
-                <a href="#">Skill 2</a>
-                <a href="#">Skill 3</a>
-            </div>
-        </div>
-
-        <div class="dropdown">
-            <button>Contact</button>
-            <div class="dropdown-content">
-                <a href="#">Email</a>
-                <a href="#">LinkedIn</a>
-                <a href="#">GitHub</a>
-            </div>
-        </div>
 
         <section class="project-highlights">
             <h2>Project Highlights</h2>
@@ -294,5 +322,12 @@
     <footer>
         <p>&copy; 2024 Owais Tabassum. All rights reserved.</p>
     </footer>
+
+    <script>
+        function toggleDropdown(event) {
+            const dropdown = event.target.nextElementSibling;
+            dropdown.classList.toggle('show');
+        }
+    </script>
 </body>
 </html>
