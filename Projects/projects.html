@@ -90,57 +90,190 @@
         <a href="../index.html" class="back-home">Back to Home</a>
         <h1>Projects - Owais Tabassum</h1>
     </header>
+<div class="container">
+
+
+
+
+
+<!-- Electric Longboard Section -->
+<div id="longboard" class="content">
+    <h2>Electric Longboard</h2>
+    <p>
+        This Electric Longboard project was designed and engineered to address the urban "last-mile" commuting challenge 
+        by offering an affordable, portable, and efficient solution for students and professionals. This 
+        front-wheel-drive electric longboard integrates brushless DC motors, a custom-built wireless 
+        control system, and advanced safety features like traction control and weight sensors.
+    </p>
+
+    <!-- System Design Section -->
+    <h3>System Design</h3>
+    <p>
+        The longboard incorporates dual BLDC motors powered by a 36V lithium-ion battery, controlled 
+        through a wireless joystick-based ESP32 system and Raspberry Pi. To ensure stability and safety, 
+        the system features:
+    </p>
+    <ul>
+        <li><b>Weight Sensors:</b> Detect when a rider steps off the board, initiating automatic braking for enhanced safety.</li>
+        <li><b>Hall Effect Speed Sensors:</b> Combined with magnets, this system monitors real-time speed and detects wheel slip for traction control and ABS.</li>
+        <li><b>Custom Casing:</b> A modular, 3D-printed polycarbonate case designed in SolidWorks to house all electrical components while maintaining balance and heat regulation.</li>
+        <li><b>Suspension System:</b> Rubber damping material reduces vibrations, ensuring a smooth ride across various terrains.</li>
+    </ul>
+    <figure style="text-align:center; margin: 1em 0;">
+        <img src="longboard-system.jpg" alt="System Design" style="max-width: 200px; height:auto; display:block; margin:auto;" />
+        <figcaption style="font-size: 0.9rem;">Figure: Prototyping Phase.</figcaption>
+    </figure>
+
+    <!-- Wireless Control and Software Section -->
+    <h3>Wireless Control and Software Integration</h3>
+    <p>
+        The remote control, built with an ESP32 microcontroller and joystick interface, transmits throttle 
+        data via Bluetooth Classic. The Raspberry Pi runs a multi-threaded Python application managing the 
+        following components concurrently:
+    </p>
+    <ul>
+        <li><b>Motor Control:</b> Calculates and adjusts throttle inputs.</li>
+        <li><b>Traction Control:</b> Detects wheel slippage and dynamically reduces power to maintain traction.</li>
+        <li><b>Speed Monitoring:</b> Processes Hall effect sensor data to calculate speed.</li>
+    </ul>
+    <figure style="text-align:center; margin: 1em 0;">
+        <video src="wireless-control-demo.mp4" controls style="max-width: 200px; height:auto; display:block; margin:auto;"></video>
+        <figcaption style="font-size: 0.9rem;">Video: Demonstration of wireless control and traction adjustment.</figcaption>
+    </figure>
+
+    <!-- Testing and Results Section -->
+    <h3>Testing and Results</h3>
+    <p>
+        The electric longboard was tested under rigorous conditions for:
+    </p>
+    <ul>
+        <li><b>Portability:</b> Total weight of 7.7 kg, meeting design specifications for easy transport.</li>
+        <li><b>Weight Capacity:</b> Successfully supported up to 118 kg without compromising performance.</li>
+        <li><b>Traction Control:</b> Demonstrated wheel speed adjustment to minimize slippage.</li>
+        <li><b>Speed Performance:</b> Achieved a controlled top speed of 30.54 km/h, capped for user safety.</li>
+    </ul>
+
+    <!-- Future Improvements Section -->
+    <h3>Future Improvements</h3>
+    <p>
+        To further enhance functionality, future iterations will include:
+    </p>
+    <ul>
+        <li>Under-glow lighting for night safety.</li>
+        <li>Obstacle detection sensors for automatic braking.</li>
+    </ul>
+
+    <!-- Documents and Simulations Section -->
+    <div class="documents">
+        <h3>Documents & Simulations</h3>
+        <div class="document-item">⚙️ <b>Specifications:</b> High-speed motor system with optimized control algorithms.</div>
+        <div class="document-item">📊 <b>Simulation:</b> Demonstrated energy efficiency improvements through MATLAB simulations.</div>
+        <div class="document-item">🔧 <b>Design Files:</b> Includes hardware schematics and codebase (available upon request).</div>
+    </div>
+</div>
 
 
 
 
 
 
+<!-- Autonomous Vehicle Section -->
+<div id="vehicle" class="content">
+    <h2>Autonomous Line-Following Vehicle with Terrain Adaptability</h2>
+    <p>
+        This project focuses on designing an Autonomous Line-Following Vehicle capable of adapting to changing 
+        terrain slopes while integrating Internet of Things (IoT) functionality for data acquisition and 
+        cloud-based analysis. By utilizing multiple sensors (accelerometer, ultrasonic, and infrared light 
+        sensors) and a Wi-Fi-enabled Arduino UNO R4, the vehicle can follow a path, navigate inclines 
+        efficiently, and avoid obstacles in real time. Sensor data is uploaded to the cloud for analysis, 
+        enhancing performance insights and enabling future optimizations.
+    </p>
 
-    <div class="container">
-        <!-- Electric Longboard Section -->
-        <div id="longboard" class="content">
-            <h2>Electric Longboard</h2>
-            <p>
-                Built a high-speed electric longboard using ESP32 for control and IoT integration. Designed to achieve optimal speed and range with enhanced safety features.
-                <br><br>
-                The system includes real-time monitoring and remote controls, ensuring optimal battery usage.
-                <div class="media">
-                    <img src="longboard1.jpg" alt="Electric Longboard">
-                    <video src="longboard-demo.mp4" controls></video>
-                </div>
-                Integrating IoT improved data tracking for speed and range, while safety protocols like cut-off brakes enhanced user experience.
-            </p>
-            <div class="documents">
-                <h3>Documents & Simulations</h3>
-                <div class="document-item">⚙️ <b>Specifications:</b> High-speed motor system with optimized control algorithms.</div>
-                <div class="document-item">📊 <b>Simulation:</b> Demonstrated energy efficiency improvements through MATLAB simulations.</div>
-                <div class="document-item">🔧 <b>Design Files:</b> Includes hardware schematics and codebase (available upon request).</div>
-            </div>
-        </div>
+    <!-- System Design and IoT Integration -->
+    <h3>System Design and IoT Integration</h3>
+    <p>
+        The core system architecture consists of the following components:
+    </p>
+    <ul>
+        <li><b>Light Sensor:</b> Tracks a white line on the ground by measuring surface reflectivity and enables trajectory correction through continuous feedback.</li>
+        <li><b>Accelerometer Sensor (ADXL345):</b> Detects terrain slopes and adjusts vehicle speed dynamically to maintain stability and efficiency during inclines and descents.</li>
+        <li><b>Ultrasonic Sensor:</b> Monitors for obstacles within a predefined range and triggers avoidance behaviors, including stopping or redirecting the vehicle.</li>
+        <li><b>Arduino UNO R4 Wi-Fi:</b> Processes sensor data and wirelessly uploads accelerometer data to the cloud for remote monitoring and terrain analysis.</li>
+    </ul>
 
+    <!-- IoT Cloud Functionality -->
+    <h3>IoT Cloud Functionality</h3>
+    <p>
+        Accelerometer sensor data is uploaded to a cloud platform via the Wi-Fi module of the Arduino UNO. This 
+        integration allows real-time storage and access to critical vehicle performance metrics, such as slope 
+        data and navigation patterns. Cloud-based data analysis helps identify performance trends, optimize control 
+        algorithms, and provide insights for future iterations of the vehicle.
+    </p>
 
+    <!-- Software Development -->
+    <h3>Software Development</h3>
+    <p>
+        The system was programmed in C++ using the Arduino IDE. Key software processes include:
+    </p>
+    <ul>
+        <li><b>Sensor Data Acquisition:</b> Continuous data collection from all three sensors.</li>
+        <li><b>Line Following Algorithm:</b> Real-time steering adjustments based on light sensor inputs to keep the vehicle centered.</li>
+        <li><b>Terrain Adaptation Logic:</b> Speed modulation based on accelerometer readings to handle varying inclines.</li>
+        <li><b>Obstacle Avoidance System:</b> Distance thresholds trigger corrective actions via ultrasonic sensor data.</li>
+        <li><b>Cloud Integration:</b> Sensor data transmission using Arduino’s Wi-Fi module for remote monitoring.</li>
+    </ul>
 
-        <!-- Autonomous Vehicle Section -->
-        <div id="vehicle" class="content">
-            <h2>Autonomous Vehicle</h2>
-            <p>
-                Designed and programmed an autonomous vehicle using Arduino and ESP32, focusing on object avoidance and efficient navigation in dynamic environments.
-                <br><br>
-                Using LiDAR technology, the vehicle successfully detects obstacles and plots optimized routes.
-                <div class="media">
-                    <img src="vehicle1.jpg" alt="Autonomous Vehicle">
-                    <video src="vehicle-demo.mp4" controls></video>
-                </div>
-                The project integrates motor controllers and PID algorithms to ensure smooth navigation.
-            </p>
-            <div class="documents">
-                <h3>Documents & Simulations</h3>
-                <div class="document-item">🛠️ <b>Specifications:</b> Integration of LiDAR and motor controllers for seamless operation.</div>
-                <div class="document-item">📊 <b>Simulation:</b> MATLAB simulations to optimize pathfinding algorithms.</div>
-                <div class="document-item">🔧 <b>Design Files:</b> Hardware schematics and Arduino C code.</div>
-            </div>
-        </div>
+    <!-- Simulation and Prototype Development -->
+    <h3>Simulation and Prototype Development</h3>
+    <p>
+        MATLAB Simulink simulations were conducted before physical testing to validate sensor functionality and 
+        system logic. The physical prototype was constructed using a 4WD car chassis, where all sensors, motors, 
+        and the Arduino controller were integrated.
+    </p>
+    <figure style="text-align:center; margin: 1em 0;">
+        <img src="vehicle1.jpg" alt="Autonomous Vehicle" style="max-width:200px; height:auto; display:block; margin:auto;" />
+        <figcaption style="font-size:0.9rem;">Figure: Prototype of the Autonomous Line-Following Vehicle.</figcaption>
+    </figure>
+
+    <!-- Demonstration Video -->
+    <h3>Demonstration</h3>
+    <figure style="text-align:center; margin: 1em 0;">
+        <video src="vehicle-demo.mp4" controls style="max-width:200px; height:auto; display:block; margin:auto;"></video>
+        <figcaption style="font-size:0.9rem;">Video: Demonstration of line-following, slope adaptability, and obstacle avoidance.</figcaption>
+    </figure>
+
+    <!-- Testing and Results -->
+    <h3>Testing and Results</h3>
+    <p>
+        The vehicle was rigorously tested under varying conditions for its key functionalities:
+    </p>
+    <ul>
+        <li><b>Line Following:</b> Successfully followed a white line with precise steering corrections.</li>
+        <li><b>Terrain Adaptation:</b> Dynamically adjusted speed on slopes, ensuring smooth and stable navigation.</li>
+        <li><b>Obstacle Detection and Avoidance:</b> Ultrasonic sensors reliably identified obstacles, initiating safe maneuvering.</li>
+        <li><b>Cloud Data Storage:</b> Real-time accelerometer data was successfully uploaded to the cloud for terrain analysis.</li>
+    </ul>
+
+    <!-- Future Improvements -->
+    <h3>Future Improvements</h3>
+    <p>
+        Potential enhancements include:
+    </p>
+    <ul>
+        <li>AI Integration: Implement predictive terrain adjustments and smarter navigation using machine learning.</li>
+        <li>Advanced Sensors: Improve accuracy of line detection and obstacle avoidance.</li>
+        <li>Remote Monitoring: Develop a dedicated user interface for real-time data visualization.</li>
+    </ul>
+
+    <!-- Documents and Simulations Section -->
+    <div class="documents">
+        <h3>Documents & Simulations</h3>
+        <div class="document-item">🛠️ <b>Specifications:</b> Details on sensor integration, speed modulation algorithms, and cloud communication protocols.</div>
+        <div class="document-item">📊 <b>Simulation:</b> MATLAB simulations for validating control logic and sensor placement.</div>
+        <div class="document-item">🔧 <b>Design Files:</b> Hardware schematics, Arduino C++ code, and simulation models (available upon request).</div>
+    </div>
+</div>
+
 
 
 
